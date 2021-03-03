@@ -1,0 +1,32 @@
+---
+title: "Census Data"
+author: "Fahad Alkhaja"
+date: "3/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(tidycensus)
+```
+
+```{r read_data, cache = TRUE}
+
+x <- read_csv("~/data/census/bunmd_v2/bunmd_v2.csv", n_max = 1000,
+              col_types = cols(.default = col_double(),
+                               zip_residence = col_character(),
+                               lname = col_character(),
+                               mname = col_character(),
+                               fname = col_character(),
+                               father_fname = col_character(),
+                               father_mname = col_character(),
+                               father_lname = col_character(),
+                               mother_fname = col_character(),
+                               mother_mname = col_character(),
+                               mother_lname = col_character(),
+                               bpl_string = col_character(),
+                               socstate_string = col_character()))
+
+```
+
